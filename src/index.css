@@ -1,45 +1,54 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #1b110d;
-  --color-surface: #1b110d;
-  --color-surface-container: #281d18;
-  --color-surface-container-low: #231914;
-  --color-surface-container-high: #332822;
-  --color-surface-container-lowest: #150c08;
-  --color-surface-bright: #433731;
-  --color-surface-variant: #3e322d;
+  --color-background: #14171f;
+--color-surface: #14171f;
+--color-surface-container: #1e222d;
+--color-surface-container-low: #1a1d27;
+--color-surface-container-high: #262a36;
+--color-surface-container-lowest: #0e1015;
+--color-surface-bright: #3a3e4a;
+--color-surface-variant: #363a46;
 
-  --color-primary: #f6be39;
-  --color-gold-antique: #d4a017;
-  --color-gold-burnished: #c99700;
+  --color-primary: #d4af37;
+--color-gold-antique: #b8952f;
+--color-gold-burnished: #c9a227;
 
-  --color-parchment-light: #f2dfd6;
-  --color-parchment-deep: #dfd2b5;
-  --color-cardboard-kraft: #a68058;
-  --color-aged-leather: #1c1410;
+  --color-parchment-light: #dee2f6;
+  --color-parchment-deep: #bfc6de;
+  --color-cardboard-kraft: #9b9078;
+  --color-aged-leather: #0a0f1d;
 
-  --color-outline: #9b8f7a;
-  --color-outline-variant: #4f4634;
+  --color-outline: #9b9078;
+  --color-outline-variant: #4e4632;
 
-  --color-on-surface: #f2dfd6;
-  --color-on-surface-variant: #d3c5ae;
+  --color-on-surface: #dee2f6;
+  --color-on-surface-variant: #d2c5ab;
 
-  --color-energy-fire: #c84224;
-  --color-energy-water: #3b6e8c;
+  --color-energy-fire: #d93829;
+  --color-energy-water: #6b8299;
   --color-energy-grass: #5c7a58;
-  --color-energy-lightning: #d49e19;
+  --color-energy-lightning: #ffcb05;
   --color-energy-psychic: #7a496b;
   --color-energy-fighting: #9e5332;
 
-  --font-display: "Epilogue", sans-serif;
-  --font-body: "Montserrat", sans-serif;
-  --font-mono: "Space Grotesk", "JetBrains Mono", monospace;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-mono: "Space Mono", monospace;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-on-surface);
+    margin: 0;
+    padding: 0;
+  }
+  * {
+    box-sizing: border-box;
   }
 }

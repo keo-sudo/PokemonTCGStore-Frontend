@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import CardGrid from './components/CardGrid'
 import LoginModal from './components/LoginModal'
 import CarritoPanel from './components/CarritoPanel'
+import InicioPage from './pages/InicioPage'
+import CatalogoPage from './pages/CatalogoPage'
+import MiCuentaPage from './pages/MiCuentaPage'
 import { useCarrito } from './context/CarritoContext'
 import './App.css'
 
@@ -77,9 +80,12 @@ function App() {
         onLogoutClick={handleLogout}
         onCarritoClick={() => setMostrarCarrito(true)}
       />
-      <main className="max-w-360 mx-auto px-4 md:px-8 py-10">
-        <CardGrid />
-      </main>
+
+      <Routes>
+  <Route path="/" element={<InicioPage />} />
+  <Route path="/catalogo" element={<CatalogoPage />} />
+  <Route path="/mi-cuenta" element={<MiCuentaPage usuario={usuario} />} />
+</Routes>
 
       {mostrarLogin && (
         <LoginModal 

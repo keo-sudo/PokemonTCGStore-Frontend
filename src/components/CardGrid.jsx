@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import CardItem from './CardItem'
 import FilterBar from './FilterBar'
 
-function CardGrid() {
+function CardGrid({ onVerDetalle }) {
   const [cartas, setCartas] = useState([])
   const [cargando, setCargando] = useState(true)
   const [filtroTipo, setFiltroTipo] = useState('ALL')
@@ -19,12 +19,12 @@ function CardGrid() {
           'Caterpie': 10, 'Metapod': 11, 'Butterfree': 12,
           'Weedle': 13, 'Kakuna': 14, 'Beedrill': 15,
           'Pidgey': 16, 'Pidgeotto': 17,
-          'Raticate': 20,
+          'Rattata': 19, 'Raticate': 20,
           'Arbok': 24,
           'Pikachu': 25, 'Raichu': 26,
           'Sandshrew': 27,
-          'Nidoran (F)': 29, 'Nidorina': 30,
-          'Nidoran (M)': 32, 'Nidorino': 33, 'Nidoking': 34,
+          'Nidoran ♀': 29, 'Nidorina': 30,
+          'Nidoran ♂': 32, 'Nidorino': 33, 'Nidoking': 34,
           'Clefairy': 35,
           'Vulpix': 37, 'Ninetales': 38,
           'Wigglytuff': 40,
@@ -61,7 +61,7 @@ function CardGrid() {
           'Magneton': 82, 'Magnemite': 81,
           'Growlithe': 58, 'Arcanine': 59,
           'Ponyta': 77, 'Rapidash': 78,
-          'Farfetchd': 83,
+          "Farfetch'd": 83,
           'Doduo': 84, 'Dodrio': 85,
           'Seel': 86, 'Dewgong': 87,
           'Grimer': 88, 'Muk': 89,
@@ -131,7 +131,7 @@ function CardGrid() {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
         {cartasFiltradas.map(carta => (
-          <CardItem key={carta.id} carta={carta} />
+          <CardItem key={carta.id} carta={carta} onVerDetalle={onVerDetalle} />
         ))}
       </div>
     </div>
