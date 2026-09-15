@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import CardItem from './CardItem'
 import FilterBar from './FilterBar'
+import { API_URL } from '../config'
 
 function CardGrid({ onVerDetalle }) {
   const [cartas, setCartas] = useState([])
@@ -9,7 +10,7 @@ function CardGrid({ onVerDetalle }) {
   const [busqueda, setBusqueda] = useState('')
 
   useEffect(() => {
-    fetch('https://localhost:7120/api/Cartas')
+    fetch(`${API_URL}/api/Cartas`)
       .then(res => res.json())
       .then(data => {
         const pokedexOrder = {

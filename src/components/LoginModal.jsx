@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { API_URL } from '../config'
 
 function LoginModal({ onClose, onLoginSuccess }) {
   const [modoRegistro, setModoRegistro] = useState(false)
@@ -15,7 +16,7 @@ function LoginModal({ onClose, onLoginSuccess }) {
 
     try {
       if (modoRegistro) {
-        const res = await fetch('https://localhost:7120/api/Usuarios/registro', {
+        const res = await fetch(`${API_URL}/api/Usuarios/registro`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ nombreUsuario, email, password })
@@ -30,7 +31,7 @@ function LoginModal({ onClose, onLoginSuccess }) {
         setError('')
         alert('¡Cuenta creada! Ahora inicia sesión.')
       } else {
-        const res = await fetch('https://localhost:7120/api/Usuarios/login', {
+        const res = await fetch(`${API_URL}/api/Usuarios/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })

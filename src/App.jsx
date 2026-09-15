@@ -7,6 +7,7 @@ import InicioPage from './pages/InicioPage'
 import CatalogoPage from './pages/CatalogoPage'
 import MiCuentaPage from './pages/MiCuentaPage'
 import { useCarrito } from './context/CarritoContext'
+import { API_URL } from './config'
 import './App.css'
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
     }
 
     try {
-      const res = await fetch('https://localhost:7120/api/Pedidos', {
+      const res = await fetch(`${API_URL}/api/Pedidos`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,10 +83,10 @@ function App() {
       />
 
       <Routes>
-  <Route path="/" element={<InicioPage />} />
-  <Route path="/catalogo" element={<CatalogoPage />} />
-  <Route path="/mi-cuenta" element={<MiCuentaPage usuario={usuario} />} />
-</Routes>
+        <Route path="/" element={<InicioPage />} />
+        <Route path="/catalogo" element={<CatalogoPage />} />
+        <Route path="/mi-cuenta" element={<MiCuentaPage usuario={usuario} />} />
+      </Routes>
 
       {mostrarLogin && (
         <LoginModal 

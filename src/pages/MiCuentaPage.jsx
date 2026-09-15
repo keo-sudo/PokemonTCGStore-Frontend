@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { API_URL } from '../config'
 
 function MiCuentaPage({ usuario }) {
   const [pedidos, setPedidos] = useState([])
@@ -12,7 +13,7 @@ function MiCuentaPage({ usuario }) {
 
     const token = localStorage.getItem('token')
 
-    fetch(`https://localhost:7120/api/Pedidos/usuario/${usuario.usuarioId}`, {
+    fetch(`${API_URL}/api/Pedidos/usuario/${usuario.usuarioId}`, {
       headers: { 'Authorization': `Bearer ${token}` }
     })
       .then(res => res.json())
